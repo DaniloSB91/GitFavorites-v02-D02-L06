@@ -1,0 +1,40 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    font-size: 62.5%;
+
+    --background-color: #2F2F33;
+    --tableHead-color: #092D38;
+    --tableBody-color: #4E5455;
+    --btn-fav-standard: #065E7C;
+    --btn-fav-hover: #FFFFFF;
+    --font-color: #E1E1E6;
+
+}
+
+body {
+    background-color: var(--background-color);
+    color: var(--font-color);
+    font-size: 2rem;
+}
+
+body * {
+    font-family: 'Roboto', sans-serif;
+
+}
+
+#sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
