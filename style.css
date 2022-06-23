@@ -123,6 +123,8 @@ table {
 table thead{
     background-color: var(--tableHead-color);
     text-align: left;
+
+    
 }
 
 table th{
@@ -133,8 +135,11 @@ table th{
 
 }
 
+
 table th:first-child{
     border-top-left-radius: 1.2rem;
+    
+
 
 }
 
@@ -143,12 +148,17 @@ table th:last-child{
 
 }
 
-tbody{
-   
-    border: 1px beige;
+tbody tr:nth-child(odd) {
+    background: rgba(6, 22, 27, 0.5);
+
+}
+
+tbody tr:nth-child(even) {
+    background: #06181C;
     border: 1px solid #4A808C;
 
 }
+
 
 .user {
     display: flex;
@@ -163,17 +173,18 @@ tbody{
 }
 
 .user img {
-    width: 5rem;
-    height: 5rem;
+    width: 5.6rem;
+    height: 5.6rem;
     object-fit: cover;
     border-radius: 50%;
 }
 
 .user span {
     font-weight: 400;
+    margin-top: .8rem;
 }
 
-.user .delete{
+tbody .delete{
     color: var(--btn-remove);
     cursor: pointer;
 }
