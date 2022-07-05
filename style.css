@@ -44,7 +44,7 @@ body * {
 }
 
 
-.content {
+#content {
     padding: 2rem;
     max-width: 1120px;
 
@@ -114,42 +114,46 @@ table {
 
     width: 100%;
     border-collapse: collapse;
-
- 
-
-    
+    overflow:hidden;
+    border-style: hidden;
+    box-shadow: 0 0 0 1px #4A808C;
+    border-radius: 12px;
 }
 
-table thead{
-    background-color: var(--tableHead-color);
+table thead tr{
+    background: var(--tableHead-color);
     text-align: left;
+    border: 1px solid #4A808C;
 
-    
 }
 
 table th{
     padding-left: 4rem;
-    height: 6.4rem;
+    height: 6.4rem; 
+    
+}
 
-   
-
+table td{
+    padding-left: 4rem;
+    
 }
 
 
-table th:first-child{
+ table th:first-child{
     border-top-left-radius: 1.2rem;
     
-
-
+    
 }
 
 table th:last-child{
     border-top-right-radius: 1.2rem;
 
-}
+} */
 
 tbody tr:nth-child(odd) {
     background: rgba(6, 22, 27, 0.5);
+    border: 1px solid #4A808C;
+
 
 }
 
@@ -158,7 +162,6 @@ tbody tr:nth-child(even) {
     border: 1px solid #4A808C;
 
 }
-
 
 .user {
     display: flex;
@@ -189,3 +192,6 @@ tbody .delete{
     cursor: pointer;
 }
 
+tbody{
+    overflow-y: scroll;
+}
