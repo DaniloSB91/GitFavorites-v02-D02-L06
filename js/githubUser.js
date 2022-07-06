@@ -6,5 +6,6 @@ export class UserGithub {
         .then(({login, name, public_repos, followers}) => ({
             login, name, public_repos, followers
         }) ))
+        
     }
 }
