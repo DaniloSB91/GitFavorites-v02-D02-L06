@@ -124,7 +124,7 @@ table {
     border-style: hidden;
     box-shadow: 0 0 0 1px #4A808C;
     border-radius: 12px;
-
+  
     position: sticky;
     top: 0;
 
@@ -204,4 +204,26 @@ tbody .delete{
 
 tbody{
     overflow-y: scroll;
+}
+
+
+tbody .emptyFav{
+    height: 45rem;
+    padding: 0;
+    background-color: hsla(194, 81%, 4%, 0.808);
+   
+}
+
+tbody .emptyFav div{
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6rem;
+}
+
+tbody .emptyFav span{
+    color: #4E5455;
+    font-size: 4rem;
+    font-family: 'Roboto Mono', monospace;
 }

@@ -12,7 +12,7 @@ export class Favorites {
 
   load() {
     this.entries = JSON.parse(localStorage.getItem("@github-favorites:")) || []
-    console.log(this.entries)
+    
   }
 
   save() {
@@ -41,9 +41,10 @@ export class Favorites {
   }
 
   delete(user) {
-    const filteredEntries = this.entries.filter(
-      (entry) => entry.login !== user.login
-    );
+    const filteredEntries = this.entries
+    .filter(entry => entry.login !== user.login)
+
+  console.log(user)
 
     this.entries = filteredEntries;
 
@@ -59,6 +60,9 @@ export class FavoritesView extends Favorites {
     super(root);
 
     this.tbody = this.root.querySelector('table tbody')
+    this.tr = document.createElement("tr")
+
+    console.log(this.tr)
 
     this.onAdd()
     this.update()
@@ -74,6 +78,11 @@ export class FavoritesView extends Favorites {
 
   update() {
     this.removeAllTer();
+    
+     if(this.entries.length <= 0){
+       this.tbody?.append(this.emptyFavorite())
+
+     }else{     
     this.entries.forEach(user => {
       const row = this.createRow()
 
@@ -85,12 +94,41 @@ export class FavoritesView extends Favorites {
       row.querySelector('.repositories').textContent = user.public_repos
       row.querySelector('.followers').textContent = user.followers
 
+      row.querySelector('.delete').onclick = () => {
+        const removeCheck = confirm('Tem certeza que deseja deletar essa linha?')
+
+        if (removeCheck){
+          this.delete(user)
+        }
+      }
+
       this.tbody?.append(row)
     })
   }
 
+  }
+
+  emptyFavorite(){
+    const tr = document.createElement("tr")
+    
+    const emptyFavHtml = `
+    <td class="emptyFav" colspan="4" > 
+                    <div>
+                        <img src="images/Estrela.svg" alt="">
+                        <span>Nenhum favorito ainda</span>
+                    </div>
+                </td>
+                `
+                tr.innerHTML = emptyFavHtml;
+    
+ console.log(tr)
+
+    return tr;
+  }
+
   createRow() {
-    const tr = document.createElement("tr");
+    const tr = document.createElement("tr")
+
 
     const userContent = `
               <td class="user">
